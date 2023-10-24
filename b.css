@@ -1,0 +1,14 @@
+#grid {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+    
+  }
+
+.cell{
+    width: auto;    height: auto;
+    
+
+}
+
