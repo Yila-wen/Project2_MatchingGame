@@ -10,13 +10,16 @@
 <body>
     <div id="grid">
 		<div class="cell" id="one">
-			<h3><button type="submit" id="buttonOne" onclick=cardTurn(1)>
-                <img id = "imgOne"src="questionMark.png"/>
+			<h3><button type="button" id="buttonOne" onclick="cardTurn()">
+        <img id = "imgOne" src="questionMark.png"/>
               </button></h3>
 		</div>
+
+
+
 		<div class="cell" id="two">
-			<h3><button type="submit" id="buttonTwo" onclick=cardTurn(2)>
-                <img src="questionMark.png"/>
+			<h3><button type="submit" id="buttonTwo" onclick=imgChange(2)>
+                <img id = "imgTwo" src="questionMark.png"/>
               </button></h3>
 		</div>
 		<div class="cell" id="three">
@@ -85,6 +88,6 @@
               </button></h3>		</div>
 	</div>
 
-    
+    <script src = "c.js"></script>
 </body>
 </html>
