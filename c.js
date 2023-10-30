@@ -1,12 +1,13 @@
 
-console.log("working");
+
 let counter = 0;
+let pairs = 0;
 const img1 = document.getElementById("buttonOne");
 const img2 = document.getElementById("imgTwo");
-let imgID = "";
 let index = 0;
+let firstPick = 0;
+let secondPick = 0;
 
-console.log("working");
 
 
 
@@ -17,8 +18,25 @@ console.log("working");
 
 
 
-function imgChange(num){   
+function imgChange(num,imgId){   
+
+    imgId.src = "p" + num + ".jpg"; 
    
-img.src = "p" + num +".jpg"; 
-   
+}
+function imgTemp(num,imgId){
+if (counter <2){
+counter++
+if (counter === 1){
+    firstPick = num;
+    imgChange(num,imgId);}
+if (counter === 2){
+    secondPick = num;
+    imgChange(num,imgId);
+setTimeout(function check(){
+    counter = 0;
+    if (firstPick === secondPick){pairs++};},100)
+}
+    
+
+}
 }
