@@ -1,12 +1,13 @@
 
-
+let score = 0;
 let counter = 0;
 let pairs = 0;
-const img1 = document.getElementById("buttonOne");
-const img2 = document.getElementById("imgTwo");
 let index = 0;
 let firstPick = 0;
+let firstImgId = "";
 let secondPick = 0;
+let secondImgId = "";
+
 
 
 
@@ -18,25 +19,48 @@ let secondPick = 0;
 
 
 
-function imgChange(num,imgId){   
+function imgChange(num, imgId) {
 
-    imgId.src = "p" + num + ".jpg"; 
-   
-}
-function imgTemp(num,imgId){
-if (counter <2){
-counter++
-if (counter === 1){
-    firstPick = num;
-    imgChange(num,imgId);}
-if (counter === 2){
-    secondPick = num;
-    imgChange(num,imgId);
-setTimeout(function check(){
-    counter = 0;
-    if (firstPick === secondPick){pairs++};},100)
-}
-    
+    imgId.src = "p" + num + ".jpg";
 
 }
+function imgTemp(num, imgId) {
+    score++;
+    if (counter < 2) {
+        counter++
+        if (counter === 1) {
+            firstPick = num;
+            firstImgId = imgId;
+            imgChange(num, imgId);
+        }
+        if (counter === 2) {
+            secondPick = num;
+            secondImgId = imgId;
+            imgChange(num, imgId);
+            setTimeout(function check() {
+                counter = 0;
+                if (firstPick === secondPick) {
+                    pairs++;
+                }
+                else {
+                    firstImgId.src = "questionMark.png";
+                    secondImgId.src = "questionMark.png";
+                }
+
+            }, 500)
+        }
+    }
+    if (pairs === 8){
+
+    }
+    document.getElementById("score").innerText = "Score: "+score;
 }
+
+function resetButton(){
+
+    for (i =0; i< 16; i++){
+
+    }
+}
+
+
