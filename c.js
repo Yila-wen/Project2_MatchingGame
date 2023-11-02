@@ -40,7 +40,9 @@ function imgTemp(num, imgId) {
             setTimeout(function check() {
                 counter = 0;
                 if (firstPick === secondPick) {
-                    pairs++;
+                    firstImgId.hidden = "hidden";//only hides most of it, must get button id to hide the whole thing
+                    secondImgId.hidden = "hidden";
+                    pairs++;//pairs only adds after you click on third image??? so last one doesnt add
                 }
                 else {
                     firstImgId.src = "questionMark.png";
@@ -54,13 +56,40 @@ function imgTemp(num, imgId) {
 
     }
     document.getElementById("score").innerText = "Score: "+score;
+    document.getElementById("pairs").innerText = "Pairs: "+pairs;
+}
+function resetImage(imgId)
+{
+    let hidden = imgId.getAttribute("hidden");
+    console.log(hidden);
+    if (hidden === "") 
+    {
+        imgId.removeAttribute("hidden");
+        imgId.src = "questionMark.png";
+    }
 }
 
 function resetButton(){
-
-    for (i =0; i< 16; i++){
-
-    }
+    resetImage(imgOne);
+    resetImage(imgTwo);
+    resetImage(imgThree);
+    resetImage(imgFour);
+    resetImage(imgFive);
+    resetImage(imgSix);
+    resetImage(imgSeven);
+    resetImage(imgEight);
+    resetImage(imgNine);
+    resetImage(imgTen);
+    resetImage(imgEleven);
+    resetImage(imgTwelve);
+    resetImage(imgThirteen);
+    resetImage(imgFourteen);
+    resetImage(imgFifteen);
+    resetImage(imgSixteen);
+    score = 0;
+    pairs = 0;
+    document.getElementById("score").innerText = "Score: "+score;
+    document.getElementById("pairs").innerText = "Pairs: "+pairs;
 }
 
 
