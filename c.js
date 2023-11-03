@@ -40,8 +40,9 @@ function imgTemp(num, imgId) {
             setTimeout(function check() {
                 counter = 0;
                 if (firstPick === secondPick) {
-                    firstImgId.hidden = "hidden";//only hides most of it, must get button id to hide the whole thing
-                    secondImgId.hidden = "hidden";
+
+                    // firstImgId.hidden = "hidden";//only hides most of it, must get button id to hide the whole thing
+                    // secondImgId.hidden = "hidden";
                     pairs++;//pairs only adds after you click on third image??? so last one doesnt add
                 }
                 else {
@@ -62,7 +63,7 @@ function resetImage(imgId)
 {
     let hidden = imgId.getAttribute("hidden");
     console.log(hidden);
-    if (hidden === "") 
+    if (imgId.src != "questionMark.png") 
     {
         imgId.removeAttribute("hidden");
         imgId.src = "questionMark.png";
