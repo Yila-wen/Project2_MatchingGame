@@ -18,13 +18,13 @@ function shuffle(arr) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
   
-      [arr[currentIndex], arr[randomIndex]] = [
-        arr[randomIndex], arr[currentIndex]];
+      [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
     }
   
     return arr;
   }
-  
+  //credit Fisher–Yates shuffle
+  //https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 
 //first we have array of 8 images, we assign images to 2 button numbers
 //use the two variables above to keep track of what is selected
