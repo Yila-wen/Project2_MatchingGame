@@ -7,7 +7,7 @@ let firstPick = 0;
 let firstImgId = "";
 let secondPick = 0;
 let secondImgId = "";
-// var arrI = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
+var arrB = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
 var arrI = ["1", "2", "3", "4", "5","6","7","8"];
 
 function shuffle(array) {
@@ -106,7 +106,7 @@ function resetButton(){
     document.getElementById("score").innerText = "Score: "+score;
     document.getElementById("pairs").innerText = "Pairs: "+pairs;
     aarI = shuffle(arrI);
-    console.log(aarI);
+    aarI = shuffle(arrB);
 }
 
 
