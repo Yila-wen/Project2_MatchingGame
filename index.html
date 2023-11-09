@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="b.css">
 </head>
-<body>
+<body onload = "initialize()">
   <p>How to play:
     click two boxes, and look for pairs of images. If they are a pair, they get pernamently revealed and you gain a pair. You win at 8 pairs and each click adds 1 to your score.
   </p>
@@ -17,8 +17,6 @@
         <img id = "imgOne" src="questionMark.png"/>
               </button></h3>
 		</div>
-
-
 
 		<div class="cell" id="two">
 			<h3><button type="submit" id="buttonTwo" onclick=imgTemp(1,imgTwo)>
@@ -56,37 +54,37 @@
               </button></h3>
 		</div>
 		<div class="cell" id="nine">
-			<h3><button type="submit" id="buttonNine" onclick=imgTemp(0,imgNine)>
+			<h3><button type="submit" id="buttonNine" onclick=imgTemp(8,imgNine)>
                 <img id="imgNine" src="questionMark.png"/>
               </button></h3>
 		</div>
         <div class="cell" id="ten">
-			<h3><button type="submit" id="buttonTen" onclick=imgTemp(1,imgTen)>
+			<h3><button type="submit" id="buttonTen" onclick=imgTemp(9,imgTen)>
                 <img id="imgTen" src="questionMark.png"/>
               </button></h3>
 		</div>
 		<div class="cell" id="eleven">
-            <h3><button type="submit" id="buttonEleven" onclick=imgTemp(2,imgEleven)>
+            <h3><button type="submit" id="buttonEleven" onclick=imgTemp(10,imgEleven)>
                 <img id="imgEleven" src="questionMark.png"/>
               </button></h3>		</div>
 		<div class="cell" id="twelve">
-            <h3><button type="submit" id="buttonTwelve" onclick=imgTemp(3,imgTwelve)>
+            <h3><button type="submit" id="buttonTwelve" onclick=imgTemp(11,imgTwelve)>
                 <img id="imgTwelve" src="questionMark.png"/>
               </button></h3>		</div>
 		<div class="cell" id="thirteen">
-            <h3><button type="submit" id="buttonThirteen" onclick=imgTemp(4,imgThirteen)>
+            <h3><button type="submit" id="buttonThirteen" onclick=imgTemp(12,imgThirteen)>
                 <img id="imgThirteen" src="questionMark.png"/>
               </button></h3>		</div>
         <div class="cell" id="fourteen">
-            <h3><button type="submit" id="buttonFourteen" onclick=imgTemp(5,imgFourteen)>
+            <h3><button type="submit" id="buttonFourteen" onclick=imgTemp(13,imgFourteen)>
                 <img id="imgFourteen" src="questionMark.png"/>
               </button></h3>		</div>
         <div class="cell" id="fifteen">
-            <h3><button type="submit" id="buttonFifteen" onclick=imgTemp(6,imgFifteen)>
+            <h3><button type="submit" id="buttonFifteen" onclick=imgTemp(14,imgFifteen)>
                 <img id="imgFifteen" src="questionMark.png"/>
               </button></h3>		</div>
         <div class="cell" id="sixteen">
-            <h3><button type="submit" id="buttonSixteen" onclick=imgTemp(7,imgSixteen)>
+            <h3><button type="submit" id="buttonSixteen" onclick=imgTemp(15,imgSixteen)>
                 <img id="imgSixteen" src="questionMark.png"/>
               </button></h3>		</div>
 	</div>

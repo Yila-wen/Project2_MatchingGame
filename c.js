@@ -7,22 +7,22 @@ let firstPick = 0;
 let firstImgId = "";
 let secondPick = 0;
 let secondImgId = "";
-var arrB = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
-var arrI = ["1", "2", "3", "4", "5","6","7","8"];
+// var arrB = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
+var arrI = ["1", "1", "2", "3", "3","4","4","5", "5", "6","6","7","7","8", "8","2"];
 
-function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
+function shuffle(arr) {
+    let currentIndex = arr.length,  randomIndex;
   
     while (currentIndex > 0) {
   
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
   
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex], arr[currentIndex]];
     }
   
-    return array;
+    return arr;
   }
   
 
@@ -83,7 +83,10 @@ function resetImage(imgId)
         imgId.src = "questionMark.png";
     }
 }
-
+function initilize()
+{
+    aarI = shuffle(arrI);
+}
 function resetButton(){
     resetImage(imgOne);
     resetImage(imgTwo);
@@ -106,7 +109,6 @@ function resetButton(){
     document.getElementById("score").innerText = "Score: "+score;
     document.getElementById("pairs").innerText = "Pairs: "+pairs;
     aarI = shuffle(arrI);
-    aarI = shuffle(arrB);
 }
 
 
