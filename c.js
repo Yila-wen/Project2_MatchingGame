@@ -7,10 +7,24 @@ let firstPick = 0;
 let firstImgId = "";
 let secondPick = 0;
 let secondImgId = "";
+// var arrI = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
+var arrI = ["1", "2", "3", "4", "5","6","7","8"];
 
-
-
-
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    while (currentIndex > 0) {
+  
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+  
 
 //first we have array of 8 images, we assign images to 2 button numbers
 //use the two variables above to keep track of what is selected
@@ -29,14 +43,14 @@ function imgTemp(num, imgId) {
     if (counter < 2) {
         counter++
         if (counter === 1) {
-            firstPick = num;
+            firstPick = arrI[num];
             firstImgId = imgId;
-            imgChange(num, imgId);
+            imgChange(arrI[num], imgId);
         }
         if (counter === 2) {
-            secondPick = num;
+            secondPick = arrI[num];
             secondImgId = imgId;
-            imgChange(num, imgId);
+            imgChange(arrI[num], imgId);
             setTimeout(function check() {
                 counter = 0;
                 if (firstPick === secondPick) {
@@ -91,6 +105,8 @@ function resetButton(){
     pairs = 0;
     document.getElementById("score").innerText = "Score: "+score;
     document.getElementById("pairs").innerText = "Pairs: "+pairs;
+    aarI = shuffle(arrI);
+    console.log(aarI);
 }
 
 
