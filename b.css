@@ -21,7 +21,7 @@
       font-size: 30px;
     }
     #help{
-      font-size: 12px;
+      font-size: 20px;
     }
 
 }
@@ -42,7 +42,7 @@
       font-size: 35px;
     }
     #help{
-      font-size: 14px;
+      font-size: 25px;
     }
 }
   @media (min-width: 1601px)
@@ -62,7 +62,7 @@
       font-size: 40px;
     }
     #help{
-      font-size: 16px;
+      font-size: 30px;
     }
   }
 
