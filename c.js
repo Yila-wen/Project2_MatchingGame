@@ -1,4 +1,5 @@
 
+
 let score = 0;
 let counter = 0;
 let pairs = 0;
@@ -63,8 +64,7 @@ else {
     }
 }
  
-    if (if (pairs >= 7 && score%2 === 0){){
-        hideWS(1);
+    if (pairs >= 7 && score%2 === 0){
         if (score === 16){
             document.getElementById("WS").innerText = "WHAT A GENIUS!!!";
         }
@@ -148,5 +148,7 @@ function check(){
      firstFlip = -1;
      secondFlip = -2;
     }
+
+
 
 
