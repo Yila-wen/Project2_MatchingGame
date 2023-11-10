@@ -63,7 +63,7 @@ else {
     }
 }
  
-    if (pairs === 8){
+    if (if (pairs >= 7 && score%2 === 0){){
         hideWS(1);
         if (score === 16){
             document.getElementById("WS").innerText = "WHAT A GENIUS!!!";
