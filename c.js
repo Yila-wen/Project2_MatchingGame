@@ -7,8 +7,11 @@ let firstPick = 0;
 let firstImgId = "";
 let secondPick = 0;
 let secondImgId = "";
+let firstFlip = -1;
+let secondFlip = -2;
 // var arrB = ["imgOne", "imgTwo", "imgThree", "imgFour", "imgFive", "imgSix", "imgSeven", "imgEight", "imgNine", "imgTen", "imgEleven", "imgTwelve", "imgThirteen", "imgFourteen", "imgFifteen", "imgSixteen"];
-var arrI = ["1", "1", "2", "3", "3","4","4","5", "5", "6","6","7","7","8", "8","2"];
+var arrI = ["1", "1", "2", "2", "3", "3","4","4","5", "5", "6","6","7","7","8", "8"];
+var arrII = [];
 
 function shuffle(arr) {
     let currentIndex = arr.length,  randomIndex;
@@ -39,53 +42,60 @@ function imgChange(num, imgId) {
 
 }
 function imgTemp(num, imgId) {
+if (!arrII.includes(num)){
+if (counter === 0){
     score++;
-    if (counter < 2) {
-        counter++
-        if (counter === 1) {
-            firstPick = arrI[num];
-            firstImgId = imgId;
-            imgChange(arrI[num], imgId);
-        }
-        if (counter === 2) {
-            secondPick = arrI[num];
-            secondImgId = imgId;
-            imgChange(arrI[num], imgId);
-            setTimeout(function check() {
-                counter = 0;
-                if (firstPick === secondPick) {
+    counter++;
+    firstFlip = num;
+    firstPick = arrI[num];
+    firstImgId = imgId;
+    imgChange(arrI[num], imgId);
+}
 
-                    // firstImgId.hidden = "hidden";//only hides most of it, must get button id to hide the whole thing
-                    // secondImgId.hidden = "hidden";
-                    pairs++;//pairs only adds after you click on third image??? so last one doesnt add
-                }
-                else {
-                    firstImgId.src = "questionMark.png";
-                    secondImgId.src = "questionMark.png";
-                }
-
-            }, 500)
-        }
+else {
+    secondFlip = num;
+    if (firstFlip != secondFlip){
+        score++;
+        secondPick = arrI[num];
+        secondImgId = imgId;
+        imgChange(arrI[num], imgId);
+        setTimeout(check,300);
     }
+}
+ 
     if (pairs === 8){
+        hideWS(1);
+        if (score === 16){
+            document.getElementById("WS").innerText = "WHAT A GENIUS!!!";
+        }
+        else if (score <= 24){
+            document.getElementById("WS").innerText = "Congrats Your in the TOP 60%";
+        }
+        else {
+            document.getElementById("WS").innerText = "Uh. . . Goodluck next time?";
+        }
+
 
     }
+}
     document.getElementById("score").innerText = "Score: "+score;
-    document.getElementById("pairs").innerText = "Pairs: "+pairs;
 }
 function resetImage(imgId)
 {
+    hideWS(0);
     let hidden = imgId.getAttribute("hidden");
     console.log(hidden);
-    if (imgId.src != "questionMark.png") 
+    if (imgId.src != "CardBackground1.jpg") 
     {
         imgId.removeAttribute("hidden");
-        imgId.src = "questionMark.png";
+        imgId.src = "CardBackground1.jpg";
     }
 }
-function initilize()
+function initialize()
 {
+    hideWS(0);
     aarI = shuffle(arrI);
+    arrII = [];
 }
 function resetButton(){
     resetImage(imgOne);
@@ -109,6 +119,34 @@ function resetButton(){
     document.getElementById("score").innerText = "Score: "+score;
     document.getElementById("pairs").innerText = "Pairs: "+pairs;
     aarI = shuffle(arrI);
+    arrII = [];
 }
+function hideWS(num) {
+    var wsElement = document.getElementById("WS");
+    if (num === 0) {
+        wsElement.style.display = "none";
+    } else {
+        wsElement.style.display = "block";
+    }
+}
+
+function check(){
+    if (firstPick === secondPick) {
+
+        // firstImgId.hidden = "hidden";//only hides most of it, must get button id to hide the whole thing
+        // secondImgId.hidden = "hidden";
+         pairs++;
+         document.getElementById("pairs").innerText = "Pairs: "+pairs;
+         arrII.push(firstFlip, secondFlip);
+
+     }
+    else {
+       firstImgId.src = "CardBackground1.jpg";
+       secondImgId.src = "CardBackground1.jpg";
+     }
+     counter = 0;
+     firstFlip = -1;
+     secondFlip = -2;
+    }
 
 
